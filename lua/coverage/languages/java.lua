@@ -3,7 +3,6 @@ local M = {}
 local Path = require "plenary.path"
 local config = require "coverage.config"
 local util = require "coverage.util"
-local cs = require "coverage.signs"
 local lom = require "neotest.lib.xml"
 
 --- Loads a coverage report.
@@ -140,6 +139,7 @@ end
 -- return a list of signs.
 -- @return list of signs
 M.sign_list = function(data)
+    local cs = require "coverage.signs"
     local signs = {}
     local funcs = {
         covered = cs.new_covered,
